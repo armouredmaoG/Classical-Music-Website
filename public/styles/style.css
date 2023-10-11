@@ -1,0 +1,706 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+html{
+    background-color: black;
+    font-size: 16px;
+}
+
+body{
+    height: 100%;
+    font-family: 'Playfair Display', serif;
+    background-color: black;
+    margin:0;
+    padding:0;
+    color: white;
+    overflow: hidden;
+}
+
+/*Start of Carousel styling*/
+.bg-img-1{
+    background-image: url("../images/sculpture/sculpture1.png");
+}
+
+.bg-img-2{
+    background-image: url("../images/sculpture/sculpture2.png");
+}
+
+.bg-img-3{
+    background-image: url("../images/sculpture/sculpture3.png");
+}
+
+.carousel-img{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*End of Carousel styling*/
+
+/*Start of Navbar styling*/
+.navbar-nav{
+    font-size: 1.5rem;
+    gap: 5rem;
+    margin: 0 auto;
+}
+
+li:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*  */
+.btnActive{
+    font-weight: bold;
+}
+
+/*End of Navbar styling*/
+
+/*Start of Music Player styling*/
+.music-player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index:20;
+    min-width:325px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    transition: all .6s ease-in-out;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+#arrow-left, #arrow-right{
+    cursor: pointer;
+}
+
+.music{
+    text-align: center;
+    width: 100%; 
+}
+
+.artist-name{
+    font-family: 'Playfair Display', serif;
+    font-weight: medium;
+    font-size: 4.4rem;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.music-name{
+    font-family: "Open Sans";
+    font-size: 2rem;
+}
+
+
+.controls{
+    width: 70%;
+    margin:0 auto;
+    padding:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls div{
+    width: 5px;
+    height: 5px;
+    margin:0;
+    cursor: pointer;
+}
+
+#ctrlIcon{
+    width: 20px;
+    height: 20px;
+}
+/*End of Music Player styling*/
+
+/*Start of Categories Popup Modal styling*/
+.categories-list{
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7); /* Use rgba for transparency */
+    position: absolute;
+    top:0;
+    left:0;
+    justify-content: space-around;
+    display: none;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+    z-index: 99;
+    overflow: hidden;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.category-content-container{
+    margin: 8em auto;
+    width: 60%;
+    height:fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+#mood{
+    /*mood*/
+    min-width: 200px;
+    height: 100px;
+    background: url("../images/mood.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#theme{
+    /*theme*/
+    min-width: 200px;
+    height: 100px;
+    background: url("../images/theme.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mood:hover, #theme:hover{
+    cursor: pointer;
+    border: 1px solid yellow;
+}
+
+/*End of Categories Popup Modal styling*/
+
+/*Start of AboutUs Modal styling*/
+.about{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    background-image: url("../images/aboutUsBackground.png");
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: center;
+    z-index:10;
+    opacity:100;
+    margin: 4rem auto;
+    font-size: 2rem;
+    transition: all .6s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Container that container the flower and about-us decsription */
+.about-container{
+    height: 90%;
+    width: 90%;
+    position: relative;
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+    column-gap: 20px;
+    margin: 0 auto;
+    /* background-color: aquamarine; */
+}
+/* Center the flower picture */
+.photo-container{
+    background-image: url("../images/flower.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Styling the About-us and Team container */
+
+/* Style the heading */
+.group-a .about-us-heading{
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.group-a{
+    /* background-color: brown; */
+    display: none;
+}
+
+.about-info-container{
+    display: flex;
+    align-items: center;
+}
+
+.about-us-description{
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 4rem;
+}
+
+.credits{
+    cursor: pointer;
+    margin-top: 50px;
+    font-size: 1.3rem;
+    /* width: 100%; */
+}
+
+.group-t{
+    display: grid;
+    grid-template: 2fr / 1fr;
+    /* background-color: cadetblue; */
+    gap:20px;
+}
+
+hr{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about-team{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    /* background-color: brown; */
+    /* border: 1px solid white; */
+}
+
+.about-team .circle{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border-radius: 50%;
+    border: 1px solid white;
+    transform: translateX(40%); 
+}
+
+
+.about-team-description{
+    height: 80%;
+    width: 90%;
+    padding: 2px;
+    font-size: 1rem;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.about-team-description{
+    padding: 2em;
+}
+
+.about-team-description .desc{
+    width: 70%;
+    margin: 1em auto;
+}
+
+
+/*End of AboutUs Modal styling*/
+
+/* Start of Close button styling*/
+.close-button-container{
+    margin-top: 2em;
+    padding:2em 2em;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: brown; */
+}
+
+.close-button{
+    width: 50px;
+    height: 50px;
+}
+.close-button:hover{
+    cursor: pointer;
+}
+/* End of Close button styling*/
+
+/*Start of Mood and Theme Subcategories styling(which is common for both)*/
+.overall-mood-container, .overall-theme-container{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: black;
+    top:0%;
+    left:0;
+    z-index:5;
+}
+
+/*categories/mood and theme*/
+#mood-container, #theme-container{
+    margin: 1em auto;
+    height: 70%;
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.card{
+    background-color: transparent;
+    border-radius: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 500px;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+/*End of Mood and Theme Subcategories styling(which is common for both)*/
+
+/*Start of Mood Subcategories styling*/
+.mood-frame{
+    cursor: pointer;
+    animation: appear 1s ease-in-out forwards;
+    transform: translateY(999px);
+}
+
+#lover{
+    background-image: url("../images/Mood/Frame\ 1.png");
+}
+
+#villian{
+    background-image: url("../images/Mood/Frame\ 2.png");
+}
+
+#loner{
+    background-image: url("../images/Mood/Frame\ 3.png");
+}
+
+#thinker{
+    background-image: url("../images/Mood/Frame\ 4.png");
+}
+
+.mood-frame:nth-child(1){
+    animation-name: appear;
+    animation-delay: 0.1s;
+}
+
+.mood-frame:nth-child(2){
+    animation-name: appear;
+    animation-delay: 0.2s;
+}
+
+.mood-frame:nth-child(3){
+    animation-name: appear;
+    animation-delay: 0.3s;
+}
+
+.mood-frame:nth-child(4){
+    animation-name: appear;
+    animation-delay: 0.4s;
+}
+
+@keyframes appear{
+    from {
+        transform: translateY(999px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+/*End of Mood Subcategories styling*/
+
+
+/*Start of Theme Subcategories styling*/
+
+#sculpture{
+    background-image: url("../images/Theme/Frame\ 1.png");
+}
+
+#museum{
+    background-image: url("../images/Theme/Frame\ 2.png");
+}
+
+#painting{
+    background-image: url("../images/Theme/Frame\ 3.png");
+}
+
+#comingsoon{
+    background-image: url("../images/Theme/Frame\ 4.png");
+}
+
+
+.frameUp{
+    animation: upToDown 1.5s ease 0s forwards;
+}
+
+.frameDown{
+    animation: downToUp 1.5s ease 0s forwards;
+}
+
+@keyframes upToDown {
+    0% {
+        transform: translateY(-999px);
+    }
+    70% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes downToUp {
+    0% {
+        transform: translateY(999px);
+    }
+    70% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*End of Theme Subcategories styling*/
+
+
+/*Add this class to hide any popup modal*/
+.hide {
+    animation: fadeOut 0.9s ease-in-out forwards; /* Fade-out animation */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+/*End of class to hide any popup modal*/
+
+
+/*Responsiveness*/
+
+
+/*Mobile*/
+@media (max-width:480px){
+
+    .navbar-nav{
+        width: 50%;
+        margin: 0 0;
+        margin-top: 1rem;
+        gap: 1rem;
+        background-color: black;
+        opacity: 70%;
+        border-radius: 10px;
+    }
+
+    .navbar-nav li{
+        display: flex;
+        justify-content: flex-start;
+        font-size: 1rem;
+    }
+
+    .music-player{
+        min-width: 250px;
+    }
+
+    .artist-name{
+        font-size: 1.7rem;
+    }
+
+    .music-name{
+        font-size: 1rem;
+    }
+
+    .carousel-control-prev, .carousel-control-next{
+        width:25px;
+    }
+
+    #prev, #next , #ctrlIcon{
+        width: 10px;
+        margin-top: -30px;
+    }
+
+    .carousel-img{
+        background-size: cover;
+    }
+
+    .close-button-container{
+        margin-top: 0;
+        padding:1em 1em;
+        height: 20px;
+    }
+
+    .close-button{
+        width: 20px;
+        height: 20px;
+    }
+
+    #mood-container, #theme-container{
+        display:block;
+    }
+
+    .card{
+        width:100%;
+        height:25%;
+        margin: 1.5rem 0;
+        padding: 0 0;
+        /* background-color: brown; */
+    }
+
+    #lover{
+        background-image: url("../images/Mood/Frame\ 1\ \(Mobile\).png");
+    }
+
+    #villian{
+        background-image: url("../images/Mood/Frame\ 2\ \(Mobile\).png");
+    }
+
+    #loner{
+        background-image: url("../images/Mood/Frame\ 3\ \(Mobile\).png");
+    }
+
+    #thinker{
+        background-image: url("../images/Mood/Frame\ 4\ \(Mobile\).png");
+    }
+
+    #sculpture{
+        background-image: url("../images/Theme/Frame\ 1\ \(Mobile\).png");
+    }
+
+    #museum{
+        background-image: url("../images/Theme/Frame\ 2\ \(Mobile\).png");
+    }
+
+    #painting{
+        background-image: url("../images/Theme/Frame\ 3\ \(Mobile\).png");
+    }
+
+    #comingsoon{
+        background-image: url("../images/Theme/Frame\ 4\ \(Mobile\).png");
+    }
+
+    .frameUp, .frameDown{
+        animation: none;
+    }
+
+    .frameLeftToRight{
+        animation: leftToRight 1.5s ease 0s forwards;
+    }
+
+    .frameRightToLeft{
+        animation: rightToLeft 1.5s ease 0s forwards;
+    }
+
+    @keyframes rightToLeft {
+        0% {
+            transform: translateX(-999px);
+        }
+        70% {
+            transform: translateX(20px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes leftToRight {
+        0% {
+            transform: translateX(999px);
+        }
+        70% {
+            transform: translateX(-20px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+}
+
+/*IPads and other Tablets*/
+@media (max-width:768px){
+    .artist-name{
+        font-size: 2.2rem;
+    }
+    .music-name{
+        font-size: 1.1rem;
+    }
+    
+    .carousel-img{
+        background-size: cover;
+    }
+
+    .about-container{
+        grid-template-columns: 1fr;
+        height: 0;
+    }
+
+    .photo-container{
+        width: 100%;
+        height: 100px;
+    }
+
+    .about-us-heading{
+        position: absolute;
+        top: 5rem;
+        left: 10px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .group-a{
+        margin-top: 6rem;
+        /* border: 2px solid yellow; */
+        /* margin-bottom: 8rem; */
+    }
+
+    .about-us-description{
+        font-size: 1rem;
+        text-align: justify;
+        /* background-color: brown; */
+        /* border: 2px solid yellow; */
+    }
+
+
+    .group-t{
+        grid-template: 1fr / 1fr 1fr;
+        gap: 20px;
+        /* background-color: brown; */
+        margin-top: 6rem;
+    }
+    
+    hr{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .about-team .circle{
+        position: absolute;
+        top:20%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    .name{
+        margin-top: 30%;
+        font-size: 1rem;
+    }
+    
+    .about-team-description{
+        margin-top: 5rem;
+        padding: 1em;
+        font-size: .7rem;
+        text-align: center;
+        border: 1px solid white;
+    }
+    
+}
