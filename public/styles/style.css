@@ -280,10 +280,18 @@ hr{
     background-color: brown;
     border-radius: 50%;
     border: 1px solid white;
-    transform: translateX(40%); 
+    transform: translateX(40%);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-
+#yuki{
+    background-image: url("../images/profile-Yuki.jpeg");
+}
+#rajie{
+    background-image: url("../images/profile-Rajie.jpeg");
+}
 .about-team-description{
     height: 80%;
     width: 90%;
