@@ -4,7 +4,7 @@
 Step into our world of classical music, custom-tailored for students seeking enhanced focus during study sessions.
 This project has been dedicated to elevate your academic experience.
 Explore our curated classical melodies designed to boost your concentration and help you achieve your goals.
-<br/ >
+<br/>
 Visit the website here: https://armouredmaog.github.io/Classical-Music-Website/
 
 ## Team
